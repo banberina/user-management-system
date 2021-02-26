@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "frontend": "cd client && yarn start",
+    "frontend": "cd client && npm start",
     "backend": "cd server && npm start",
     "dev": "concurrently --kill-others \"npm run backend\" \"npm run frontend\"",
-    "install": "cd server && npm install && cd ../client && npm install && yarn install",
+    "install": "cd server && npm install && cd ../client && npm install",
     "start": "cd server && npm install && node server.js",
-    "heroku-postbuild": "cd client && yarn install && yarn run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
