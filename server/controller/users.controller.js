@@ -11,18 +11,6 @@ module.exports = {
       .catch((err) => console.error(err));
   },
 
-  getAUser: (req, res, next) => {
-    const user = User.findOne(
-      {
-        _id: req.params.uID,
-      },
-      (err, user) => {
-        if (err) res.send(err);
-        else res.send(user);
-      }
-    );
-  },
-
   createUser: (req, res, next) => {
     const newUser = new User({
       email: req.body.email,
@@ -88,6 +76,14 @@ module.exports = {
         User.findOne({ _id: req.params.uID }).then(function (password) {
           res.send(password);
         });
+      })
+      .catch((err) => console.error(err));
+  },
+
+  deleteUser: (req, res, next) => {
+    User.findOneAndRemove({ _id: req.params.uID })
+      .then(function (user) {
+        res.send(user);
       })
       .catch((err) => console.error(err));
   },
