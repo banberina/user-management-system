@@ -1,0 +1,11 @@
+.search-box {
+    -webkit-appearance: none;
+    border:rgb(60, 170, 170);
+    outline: none;
+    padding: 10px;
+    width: 30%;
+    line-height: 30px;
+    margin-bottom: 30px;
+    font-family: 'DotGothic16';
+    text-align: center;
+  }

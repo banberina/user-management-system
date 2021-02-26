@@ -1,0 +1,20 @@
+nav {
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, black 0%, transparent 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, black 0%, transparent 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  height: auto;
+
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none!important;
+}
+
+nav ul li:hover {
+  color: #089792;
+  cursor: pointer;
+}
+

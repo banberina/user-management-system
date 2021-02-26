@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { ToastContainer } from "react-toastify";
+
+import NavBar from "./components/navbar/navbar.component";
+import UsersPage from "./pages/users/users.component";
+import CategoriesPage from "./pages/categories/categories.component";
+import NotFoundPage from "./pages/404/not-found.component";
+
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer />
+      <Router>
+      <NavBar/>
+        <Switch>
+          <Route exact path="/" component={UsersPage} />
+          <Route path="/categories" component={CategoriesPage} />
+          <Route path="*" component={NotFoundPage} />
+        </Switch>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
