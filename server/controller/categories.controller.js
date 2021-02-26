@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { categories } = require("../../client/src/api/categories");
 const Category = require("../models/category.model");
 
 module.exports = {
