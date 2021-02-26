@@ -8,7 +8,7 @@
     "frontend": "cd client && yarn start",
     "backend": "cd server && npm start",
     "dev": "concurrently --kill-others \"npm run backend\" \"npm run frontend\"",
-    "install": "cd server && npm install && cd ../client && npm install && npm install yarn && yarn install",
+    "install": "cd server && npm install && cd ../client && npm install && yarn install",
     "start": "cd server && npm install && node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
