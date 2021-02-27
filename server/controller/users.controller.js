@@ -11,6 +11,18 @@ module.exports = {
       .catch((err) => console.error(err));
   },
 
+  getAUser: (req, res, next) => {
+    const user = User.findOne(
+      {
+        _id: req.params.uID,
+      },
+      (err, user) => {
+        if (err) res.send(err);
+        else res.send(user);
+      }
+    );
+  },
+  
   createUser: (req, res, next) => {
     const newUser = new User({
       name: req.body.name,
@@ -75,6 +87,21 @@ module.exports = {
       .then(function () {
         User.findOne({ _id: req.params.uID }).then(function (password) {
           res.send(password);
+        });
+      })
+      .catch((err) => console.error(err));
+  },
+
+  editAUserCategory: (req, res, next) => {
+    User.findByIdAndUpdate(
+      { _id: req.params.uID },
+      {
+        category: req.body.category,
+      }
+    )
+      .then(function () {
+        User.findOne({ _id: req.params.uID }).then(function (category) {
+          res.send(category);
         });
       })
       .catch((err) => console.error(err));
