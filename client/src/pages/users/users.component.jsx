@@ -20,8 +20,6 @@ import {
 
 import { toast } from "react-toastify";
 
-import "./users.styles.css";
-
 const UsersPage = () => {
   const [usersList, setUsersList] = useState([]);
   const [searchField, setSearchField] = useState("");
@@ -75,18 +73,25 @@ const UsersPage = () => {
     await users
       .createUser(input)
       .then(() => {
+        window.location.reload();
         toast.success("You've successfully created new user!", {
           position: "top-center",
-          autoClose: 2000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
         });
-        window.location.reload();
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Something's not right, try again!", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       });
   };
 
@@ -174,7 +179,7 @@ const UsersPage = () => {
                 onChange={handleInput}
               >
                 {categoriesList.map((one) => (
-                  <option>{one._id}</option>
+                  <option value={one._id}>{one.category}</option>
                 ))}
               </Input>
             </FormGroup>

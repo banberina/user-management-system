@@ -4,12 +4,13 @@ import Card from "../card/card.component";
 
 import "./card-list.styles.css";
 
-const UsersCardList = ({ list, del }) => (
+const UsersCardList = ({ list, del, edit }) => (
   <div className="card-list">
     {list.map((one) => (
       <Card
         key={one._id}
         id={one._id}
+        edit={`/edituser/${one._id}`}
         del={del}
         img={`https://robohash.org/${one.id}?set=set5&size=180x180`}
         name={one.name}
