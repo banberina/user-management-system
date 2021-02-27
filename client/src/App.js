@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import NavBar from "./components/navbar/navbar.component";
 import UsersPage from "./pages/users/users.component";
 import CategoriesPage from "./pages/categories/categories.component";
+import EditUserPage from "./pages/editUser/edit-user.component";
 import NotFoundPage from "./pages/404/not-found.component";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -21,6 +22,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={UsersPage} />
           <Route path="/categories" component={CategoriesPage} />
+          <Route path="/edituser/:uID" component={EditUserPage}/>
           <Route path="*" component={NotFoundPage} />
         </Switch>
       </Router>
