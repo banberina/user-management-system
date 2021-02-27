@@ -100,14 +100,16 @@ const CategoriesPage = () => {
               </Label>
               <Input
                 required={true}
-                bsSize="sm"
+                bsSize="md"
                 type="text"
                 name="category"
                 id="category"
-                placeholder="premium"
+                placeholder="example: premium"
                 onChange={handleInput}
               />
             </FormGroup>
+            <br/>
+            <hr/>
             <Button
               type="submit"
               className="special-font-subheader"
