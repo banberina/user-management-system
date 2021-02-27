@@ -13,22 +13,22 @@ module.exports = {
 
   createUser: (req, res, next) => {
     const newUser = new User({
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      name: req.body.name,
-      category: req.body.category || "user",
+      category: req.body.category,
     });
 
     newUser.save(function (err) {
       if (err) {
         res.send({
           success: false,
-          message: "Sign up failed",
+          message: "Failed",
         });
       } else {
         res.send({
           success: true,
-          message: "Sign up success",
+          message: "Success",
           user: newUser,
         });
       }
